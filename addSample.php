@@ -16,7 +16,7 @@ if(isset($_GET['id'])) {
 } else {
   $editing = false; // we are adding a sample, not editing an existing one
 }
-?>
+?> 
 
 <div class="container z-depth-1 nemaid-window">
   <div class="nemaid-window-head">
