@@ -9,9 +9,9 @@ if(isset($_GET['id'])) {
   $editing = true; // boolean
   $sample_id = $_GET['id']; // sample id of the sample we are editing
   $sampleInfo = [
-    id => 'Sample2',
-    desc => 'A nice sample',
-
+    'id' => 'Sample2',
+    'desc' => 'A nice sample',
+    'date' => null
   ]; // Result of sql request where sampleid = $sample_id
 } else {
   $editing = false; // we are adding a sample, not editing an existing one
