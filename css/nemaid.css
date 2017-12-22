@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.nemaid-window {
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.nemaid-window-head {
+  font-size: 25px;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0,0,0,0.6);
+  margin-bottom: 15px;
+}
