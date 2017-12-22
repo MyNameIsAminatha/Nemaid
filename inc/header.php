@@ -1,3 +1,8 @@
+<?php
+  require_once(__DIR__ . "/../class/class.dbmysql.php");
+  $db = new dbmysql;
+?>
+
 <html>
   <head>
     <link rel="stylesheet" href="./css/materialize.css">
