@@ -1,9 +1,3 @@
-<!-- 21 November 2017
-Aminatha
-Projet: Némaid
--->
-<?php include('inc/header.php'); ?>
-
 <?php
 if(isset($_GET['id'])) {
   $editing = true; // boolean
@@ -11,12 +5,12 @@ if(isset($_GET['id'])) {
   $sampleInfo = [
     'id' => 'Sample2',
     'desc' => 'A nice sample',
-    'date' => null
+    'date' => '22/12/2017'
   ]; // Result of sql request where sampleid = $sample_id
 } else {
   $editing = false; // we are adding a sample, not editing an existing one
 }
-?> 
+?>
 
 <div class="container z-depth-1 nemaid-window">
   <div class="nemaid-window-head">
@@ -39,4 +33,3 @@ if(isset($_GET['id'])) {
       <button type="submit" class="waves-effect waves-teal btn">Next</button>
     </form>
 </div>
-<?php include('inc/footer.php'); ?>

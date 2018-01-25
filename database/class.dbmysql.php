@@ -8,18 +8,12 @@
   $returnSingleRow : if set to true, will return an array indexed by db fields (example $array['username'])
 */
 
-class dbmysql {
+class dbmysql extends main {
 
   var $db;
-  public static $config; // Refer to config.inc.php
 
   function __construct(){
-
-    if(!self::$config){
-      include(dirname(__FILE__). "/../config/config.inc.php");
-      self::$config = $config;
-    }
-
+    parent::__construct();
     $this->db = new PDO("mysql:dbname=" . $this::$config['DB_NAME'] . ";host=" . $this::$config['DB_SERVER'] . ";charset=" . $this::$config['DB_CHARSET'], $this::$config['DB_USER'], $this::$config['DB_PASSWORD']);
     $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
@@ -40,7 +34,7 @@ class dbmysql {
     if($returnArray) {
       if($returnSingleRow) {
         $result = $req->fetchAll(PDO::FETCH_NAMED);
-        return $result[0];
+        return (isset($result[0]) ? $result[0] : null);
       } else {
         return $req->fetchAll(PDO::FETCH_NAMED);
       }

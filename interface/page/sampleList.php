@@ -1,9 +1,3 @@
-<!-- 21 November 2017
-Aminatha
-Projet: Némaid
--->
-<?php include('inc/header.php'); ?>
-
 <?php
 // DB devra sortir la liste des samples
 $samples = [
@@ -32,12 +26,10 @@ $samples = [
           <td><?= $value[0]; ?></td>
           <td><?= $value[1]; ?></td>
           <td><?= $value[2]; ?></td>
-          <td><a href="addSample.php?id=<?= $value[0]; ?>">Retrieve</a></td>
+          <td><a href="index.php?page=addSample&id=<?= $value[0]; ?>">Retrieve</a></td>
         </tr>
       <?php } ?>
     </tbody>
   </table>
 
 </div>
-
-<?php include('inc/footer.php'); ?>
