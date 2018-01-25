@@ -11,6 +11,7 @@
       <div class="nav-wrapper">
         <a href="index.php" class="brand-logo center">NEMAID</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
           <li><a href="#">Genus</a></li>
           <?php if($isAuth) { ?><!-- L'utilisateur est connecté -->
             <li><a href="#">Parameters</a></li>
@@ -21,7 +22,7 @@
           <?php } ?>
         </ul>
         <ul class="right">
-          <li><a href="index.php?page=login"><i class="material-icons orange-text" style="font-size:34px;">account_circle</i></a></li>
+          <li><a href="index.php?page=login">LOG IN</a></li>
           <?php if($isAuth) { ?>
             <li><a href="index.php?logout">Logout</a></li>
           <?php } ?>
