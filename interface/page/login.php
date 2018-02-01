@@ -53,7 +53,7 @@
         alert("An error occured.");
       },
       success: function(data) {
-      	if(data == 'success') window.location.replace("index.php?page=sample");
+      	if(data == 'success') window.location.replace("index.php?page='sample'");
         if(data == 'error') Materialize.toast('Identifiants incorrects', 4000);
       }
     });

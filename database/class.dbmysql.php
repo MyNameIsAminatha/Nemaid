@@ -45,11 +45,34 @@ class dbmysql extends main {
   }
 
   public function escape_string($str){
-    return $this->db->escape_string($str);
+    return $str;
   }
 
   public function lastInsertId(){
     return $this->db->lastInsertId();
+  }
+
+  public function list_fields($table){
+    $sql = "SHOW COLUMNS FROM " . $this->escape_string($table);
+    return $this->query($sql, [], true);
+  }
+
+  public function list_primary_keys($table){
+    $fields = $this->list_fields($table);
+    $keys = [];
+    foreach ($fields as $key => $value) {
+      if($value['Key'] == 'PRI') $keys[] = $value['Field'];
+    }
+    return $keys;
+  }
+
+  public function list_auto_increments($table){
+    $fields = $this->list_fields($table);
+    $keys = [];
+    foreach ($fields as $key => $value) {
+      if($value['Extra'] == 'auto_increment') $keys[] = $value['Field'];
+    }
+    return $keys;
   }
 
 }

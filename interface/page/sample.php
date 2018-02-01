@@ -5,7 +5,7 @@
   </div>
 
   <div class="center">
-     <a href="index.php?page=addSample" class="waves-effect waves-teal btn btn-large">New Sample</a>&nbsp;&nbsp;&nbsp;&nbsp;
-     <a href="index.php?page=sampleList"  class="waves-effect waves-teal btn btn-large">Retrieve Sample</a>
+     <a href="index.php?page=addSample" class="waves-effect waves-teal btn btn-large">Enter</a>&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="index.php?page=sampleList"  class="waves-effect waves-teal btn btn-large">List</a>
   </div>
 </div>

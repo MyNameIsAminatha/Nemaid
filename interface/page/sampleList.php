@@ -1,9 +1,6 @@
 <?php
 // DB devra sortir la liste des samples
-$samples = [
-  ['sample1', 'name1', 'jeudi'],
-  ['sample2', 'name2','vendredi']
-];
+$samples = $this->cast("cosample")->getSamples();
 ?>
 
 <div class="container z-depth-1 nemaid-window">
@@ -16,17 +13,15 @@ $samples = [
       <tr>
           <th>Sample ID</th>
           <th>Sample Name</th>
-          <th>Sampling date</th>
           <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($samples as $key => $value) { ?>
+      <?php foreach ($samples as $sample) { ?>
         <tr>
-          <td><?= $value[0]; ?></td>
-          <td><?= $value[1]; ?></td>
-          <td><?= $value[2]; ?></td>
-          <td><a href="index.php?page=addSample&id=<?= $value[0]; ?>">Retrieve</a></td>
+          <td><?= $sample['id']; ?></td>
+          <td><?= $sample['code']; ?></td>
+          <td><a href="index.php?page=addSample&code=<?= $sample['code']; ?>">Retrieve</a></td>
         </tr>
       <?php } ?>
     </tbody>
