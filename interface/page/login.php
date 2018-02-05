@@ -37,7 +37,7 @@
       </form>
     </div>
   </div>
-  <a>Create account</a>
+  <!--<a>Create account</a>-->
 </center>
 
 <script type="text/javascript">
@@ -53,7 +53,7 @@
         alert("An error occured.");
       },
       success: function(data) {
-      	if(data == 'success') window.location.replace("index.php?page='sample'");
+      	if(data == 'success') window.location.replace("index.php?page=sampleList");
         if(data == 'error') Materialize.toast('Identifiants incorrects', 4000);
       }
     });

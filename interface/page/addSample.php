@@ -28,9 +28,99 @@ if(isset($_GET['code'])) {
             <td><input name="code" type="text" placeholder="Code" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
           </tr>
           <tr>
-            <td>Body Length</td>
-            <td><input name="body_length_ci" type="text" placeholder="CI" value="<?= ($editing) ? $sampleInfo['body_length_ci'] : '' ?>" /></td>
+            <td>LGT</td>
+            <td><input name="body_length_ci" type="text" placeholder="Body Length" value="<?= ($editing) ? $sampleInfo['body_length_ci'] : '' ?>" /></td>
           </tr>
+          <tr>
+            <td>STY</td>
+            <td><input name="sty" type="text" placeholder="Stylet Length" value="<?= ($editing) ? $sampleInfo['sty'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>DGO</td>
+            <td><input name="dgo" type="text" placeholder="Distance dorasal gland opening to stylet base" value="<?= ($editing) ? $sampleInfo['dgo'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>EXPO</td>
+            <td><input name="expo" type="text" placeholder="Distance anterior end to excretory pore" value="<?= ($editing) ? $sampleInfo['expo'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>BAW</td>
+            <td><input name="baw" type="text" placeholder="Width of body annuli" value="<?= ($editing) ? $sampleInfo[''] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>TAIL</td>
+            <td><input name="tail" type="text" placeholder="Tail Length" value="<?= ($editing) ? $sampleInfo[''] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>TAN</td>
+            <td><input name="tan" type="text" placeholder="Number of tail annuli (ventral side)" value="<?= ($editing) ? $sampleInfo[''] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>PHAS</td>
+            <td><input name="phas" type="text" placeholder="Number of annuli between phasmids and anus" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td><input name="code" type="text" placeholder="Ratio a" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>c</td>
+            <td><input name="code" type="text" placeholder="Ratio c" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>c'</td>
+            <td><input name="code" type="text" placeholder="Ratio c'" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>m</td>
+            <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>V</td>
+            <td><input name="code" type="text" placeholder="Ratio V" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>SPIC</td>
+            <td><input name="code" type="text" placeholder="Spicule Length" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>Males</td>
+            <td><input name="code" type="text" placeholder="% males/total number of specimens" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>PGB</td>
+            <td><input name="code" type="text" placeholder="% of specimens with Posterior genital branch degenerate" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>PUS</td>
+            <td><input name="code" type="text" placeholder="% of specimens with Posterior genital branch degenerate" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>DISC</td>
+            <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>CAN</td>
+            <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>HAB</td>
+            <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>LIP</td>
+            <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>INC</td>
+          <td><input name="code" type="text" placeholder="Ratio m" value="<?= ($editing) ? $sampleInfo['code'] : '' ?>" /></td>
+        </tr>
+
+
+
+
+
+
         </tbody>
       </table>
 
