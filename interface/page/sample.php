@@ -2,6 +2,7 @@
 if(isset($_GET['code'])) {
   $editing = true; // boolean
   $sample_code = $_GET['code']; // sample id of the sample we are editing
+  $genuses = $this->cast("cogenus")->getGenuses();
   $sampleInfo = $this->cast("cosample")->getSample($sample_code); // Result of sql request where sampleid = $sample_id
 } else {
   $editing = false; // we are adding a sample, not editing an existing one
@@ -14,8 +15,42 @@ if(isset($_GET['code'])) {
   </div>
     <form id="sampleForm" onsubmit="return false;">
       <input style="display: none;" name="id" value="<?= ($editing) ? $sampleInfo['id'] : '' ?>" />
+
       <table>
         <thead>
+          <tr>
+              <th>Informations</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Sample number code</td>
+            <td><input name="numbercode" type="text" placeholder="Sample Id" value="<?= ($editing) ? $sampleInfo['numbercode'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>Genus</td>
+            <td>
+              <select class="" name="genus">
+                <option disabled selected>Choose your genus</option>
+                <<?php foreach ($genuses as $genus): ?>
+                  <option <?php if($editing && ($sampleInfo['Genus_Name'] == $genus['Genus_Name'])) { echo 'selected'; } ?> value=""><?= $genus['Genus_Name'] ?></option>
+                <?php endforeach; ?>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <!--in sample info the info got to be the same as in the data base-->
+            <td>Date</td>
+            <td><input name="date" type="text" placeholder="Date of entry" value="<?= ($editing) ? $sampleInfo['Date'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td><input name="location" type="text" placeholder="Location" value="<?= ($editing) ? $sampleInfo['location'] : '' ?>" /></td>
+          </tr>
+        <thead>
+
+
           <tr>
               <th>Characters</th>
               <th>Value</th>
@@ -146,4 +181,7 @@ if(isset($_GET['code'])) {
       }
     });
   }
+  $(document).ready(function() {
+    $('select').material_select();
+  });
 </script>
