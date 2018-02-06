@@ -15,7 +15,7 @@
           <li><a href="#">Genus</a></li>
           <?php if($isAuth) { ?><!-- L'utilisateur est connecté -->
             <li><a href="#">Parameters</a></li>
-            <li><a href="index.php?page=sample">Sample</a></li>
+            <li><a href="index.php?page=samples">Sample</a></li>
             <li><a href="#">Results</a></li>
             <li><a href="#">Exit</a></li>
             <li><a href="#">Help</a></li>

@@ -8,9 +8,9 @@ $samples = $this->cast("cosample")->getSamples();
 <script type="text/javascript">
 var params = {
   fields: { // Fields of the database to be displayed, label of the fields for the headers
-    sample_id: {db_id: 'Id_Sample', label: 'Id', columnWidth: 40, sortable: true },
     sample_genus: {db_id: 'Genus_Name', label: 'Genus', columnWidth: 20, sortable: true },
-    sample_date: {db_id: 'date', label: 'Date', columnWidth: 10, sortable: true }
+    sample_date: {db_id: 'date', label: 'Date', columnWidth: 10, sortable: true },
+    sample_retrieve: {db_id: 'Id_Sample', label: 'Actions', columnWidth: 10, template: "<a href='index.php?page=sample&code=%data'>Retrieve</a>" }
   },
   ajaxUrl: 'explore.getTableResult', // Link to ajax
   tableName: 'sample', // Table name (can use join)
@@ -44,6 +44,9 @@ $(document).ready(function(){
   <div class="nemaid-window-head">
     Sample list
   </div>
+
+  <a href="index.php?page=sample" class="waves-effect waves-teal btn btn-large">Enter</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 <div id="sample_table">
 
