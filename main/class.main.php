@@ -77,6 +77,18 @@ class main {
 			$htmlRet .= $inclusionRaw;
 		}
 
+		foreach($this->inclusions as $inclusion){
+			if($inclusion[0] == "js"){
+				$htmlRet .= '<script src="./interface/js/'. $inclusion[1] . '"></script>';
+			}
+		}
+
+		foreach($this->inclusionsRaw as $inclusion){
+			if($inclusion[0] == "js"){
+				$htmlRet .= '<script src="' . $inclusion[1] . '"></script>';
+			}
+		}
+
     $htmlRet .= '<title>' . $this::$config['TITLE'] . '</title>';
     $htmlRet .= '<meta name="viewport" content="' . $this::$config['VIEWPORT'] . '">';
     $htmlRet .= '<meta name="description" content="' . $this::$config['DESCRIPTION'] . '">';

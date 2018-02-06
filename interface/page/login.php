@@ -53,7 +53,7 @@
         alert("An error occured.");
       },
       success: function(data) {
-      	if(data == 'success') window.location.replace("index.php?page=sampleList");
+      	if(data == 'success') window.location.replace("index.php?page=genus");
         if(data == 'error') Materialize.toast('Identifiants incorrects', 4000);
       }
     });

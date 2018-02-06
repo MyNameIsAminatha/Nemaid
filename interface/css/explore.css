@@ -1,0 +1,274 @@
+/* EXPLORE */
+
+.explore-table {
+	background: #efefef;
+}
+
+.explore-table thead {
+	background: #ffffff;
+	padding: 5px;
+}
+
+th {
+	padding: 15px 15px;
+}
+
+td {
+	padding: 15px 15px;
+}
+
+.explore-topNavigation {
+	padding: 10px 10px;
+	border-bottom: 1px solid #d0d0d0;
+	background-color: #F5F5F5;
+}
+
+.explore-bottomNavigation {
+	padding: 20px;
+	background-color: #F5F5F5;
+}
+
+.explore-navigation-chevron {
+	cursor: pointer;
+	font-size: 20px !important;
+	transition: all ease 0.5s;
+	color: #8f8f8f;
+}
+
+.explore-navigation-chevron:hover {
+	color: #CCCCCC;
+}
+
+.explore-disabled {
+	display: none!important;
+}
+
+.explore-button, .explore-button:focus {
+	padding: 5px 10px;
+	margin: 0px 5px;
+	border: 1px solid #d4d4d4;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	transition: all ease 0.5s;
+}
+
+.explore-button:hover {
+	background-color: #F0F0F0;
+}
+
+/* BLUE HERE */
+.explore-button-active, .explore-button-active:focus {
+	background-color: #1E88E5;
+	color: #FFFFFF;
+	border: 0px none;
+}
+
+/* BLUE HERE */
+.explore-button-active:hover {
+	background-color: #1E88E5;
+}
+
+.explore-vertical-label {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  -ms-writing-mode: bt-rl;
+}
+
+.explore-result-per-page {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  line-height: 19px;
+  height: 32px;
+  padding: 5px 10px;
+}
+
+.explore-search-input {
+	border-radius: 3px 0px 0px 3px!important;
+  line-height: 19px!important;
+  height: 32px!important;
+  font-size: 14px!important;
+}
+
+.explore-search-input:focus {
+	outline: 0px;
+}
+
+.explore-search-icon {
+    padding: 4px 10px 11px 10px;
+    font-size: 18px;
+    color: #b9b9b9;
+    background: white;
+    border: 1px solid #d2d2d2;
+    border-radius: 0px 5px 5px 0px;
+    border-left: 0px;
+    line-height: 19px;
+    height: 32px;
+}
+
+#explore-search-loader {
+  float: left;
+  padding-left: 20px;
+}
+
+.explore-delete-search {
+  background-color: #bb7373;
+  color: white;
+  border-color: #b15f5f;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+.explore-delete-search:hover {
+  background-color: #da8888!important;
+}
+
+.explore-export-btn {
+  border: 1px solid #b7b7b7;
+  /*border-radius: 100%;
+  width: 30px;*/
+  border-radius: 50px;
+  height: 30px;
+  background-color: white;
+  transition: all ease 0.35s;
+  line-height: 29px;
+  padding: 0px 20px;
+}
+
+.explore-export-btn:hover {
+  background-color: #757575;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.explore-export-btn:focus {
+  background-color: white;
+}
+
+.explore-no-results {
+    padding: 10px 20px;
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-no-results i {
+	font-size: 40px;
+  color: #0093ff;
+}
+
+.explore-opacity i {
+  opacity: 0.5;
+}
+
+.explore-opacity i:hover {
+  opacity: 1;
+  text-shadow: 0px 1px 1px #FFFFFF;
+}
+
+.explore-opacity i {
+  transition: all ease 0.3s;
+}
+
+.explore-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  text-align: center;
+}
+
+tr:hover .explore-hidden {
+  visibility: visible;
+  opacity: 1;
+}
+
+.explore-hidden i {
+  transition: all ease 0.5s;
+}
+
+.explore-hidden i:hover {
+  opacity: 0.4;
+}
+
+.filters{
+  text-align: left;
+  padding: 0px;
+  border-bottom: 1px solid #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+}
+
+.filters li {
+  display: inline-block;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.filters i.arrayIcon {
+  padding-left: 5px;
+}
+
+i.arrayIcon.fa-stack i {
+  width: auto;
+}
+
+.filters i.arrayIcon.fa-stack {
+  width: 3em;
+  height: auto;
+  line-height: inherit;
+  vertical-align: inherit;
+}
+
+.filters ul {
+  margin-bottom: 0px;
+}
+
+.filterButton {
+  border-radius: 3px;
+  border: 0px solid #a9a9a9;
+  background-color: #ececec !important;
+  padding: 5px 10px;
+  opacity: 0.35;
+  transition: all ease 0.5s;
+}
+
+.filterButton:hover {
+  opacity: 0.75;
+}
+
+.filterButton:focus {
+  background-color: transparent;
+}
+
+.filterButtonSelected {
+  opacity: 1;
+  background-color: #ececec !important;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+}
+
+.arrayIcon {
+	font-size: 20px;
+}
+
+.arrayIconBox i {
+  text-align: center;
+  width: 100%;
+}
+
+.filterHeading {
+  font-size: 14px;
+  font-weight: normal;
+  background-color: #ECECEC;
+  padding: 5px 20px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.filterBody {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.explore-loader-small {
+    width: 26px!important;
+    height: 26px!important;
+}
