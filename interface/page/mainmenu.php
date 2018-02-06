@@ -22,8 +22,9 @@
           <?php } ?>
         </ul>
         <ul class="right">
+          <?php if(!$isAuth) { ?>
           <li><a href="index.php?page=login">LOG IN</a></li>
-          <?php if($isAuth) { ?>
+        <?php } elseif($isAuth) { ?>
             <li><a href="index.php?logout">Logout</a></li>
           <?php } ?>
         </ul>
