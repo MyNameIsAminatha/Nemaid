@@ -18,7 +18,7 @@
 
   // MySQL
   $config["DB_SERVER"] = "localhost";
-  $config["DB_NAME"] = "nemaid-old";
+  $config["DB_NAME"] = "nemaid";
   $config["DB_USER"] = "root";
   $config["DB_PASSWORD"] = "root";
   $config["DB_CHARSET"] = "utf8";

@@ -9,11 +9,13 @@ class cosample extends main {
 	}
 
 	public function addSample($data) {
-		return $this->cast("coresource")->savePost("sample", $data, true);
+		$sql = "INSERT INTO sample (date, Genus_Name, Id_User) VALUES (?, ?, ?)";
+		$this->cast("dbmysql")->query($sql, [$data['date'], $data['Genus_Name'], 4]);
+		return $this->cast("dbmysql")->lastInsertId();
 	}
 
 	public function getSample($code) {
-		$sql = "SELECT * FROM sample WHERE code = ?";
+		$sql = "SELECT * FROM sample WHERE Id_Sample = ?";
 		return $this->cast("dbmysql")->query($sql, [$code], true, true);
 	}
 
