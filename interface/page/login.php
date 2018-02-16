@@ -23,9 +23,9 @@
             <input class='validate' type='password' name='password' id='password' />
             <label for='password'>Enter your password</label>
           </div>
-          <label style='float: right;'>
+          <!--<label style='float: right;'>
 						<a class='orange-text' href='#!'><b>Forgot Password?</b></a>
-					</label>
+					</label>-->
         </div>
 
         <br />
@@ -53,7 +53,7 @@
         alert("An error occured.");
       },
       success: function(data) {
-      	if(data == 'success') window.location.replace("index.php?page=samples");
+      	if(data == 'success') window.location.replace("index.php?page=genus");
         if(data == 'error') Materialize.toast('Identifiants incorrects', 4000);
       }
     });

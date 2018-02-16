@@ -9,8 +9,8 @@ class cosample extends main {
 	}
 
 	public function addSample($data) {
-		$sql = "INSERT INTO sample (date, Genus_Name, Id_User) VALUES (?, ?, ?)";
-		$this->cast("dbmysql")->query($sql, [$data['date'], $data['Genus_Name'], 4]);
+		$sql = "INSERT INTO sample (date, Genus_Name, Species_Name, Id_User) VALUES (?, ?, ?, ?)";
+		$this->cast("dbmysql")->query($sql, [$data['date'], $data['Genus_Name'], $data['Species_Name'], 4]);
 		return $this->cast("dbmysql")->lastInsertId();
 	}
 

@@ -8,7 +8,8 @@ $samples = $this->cast("cosample")->getSamples();
 <script type="text/javascript">
 var params = {
   fields: { // Fields of the database to be displayed, label of the fields for the headers
-    sample_genus: {db_id: 'Genus_Name', label: 'Genus', columnWidth: 20, sortable: true },
+    sample_genus: {db_id: 'Genus_Name', label: 'Genus', columnWidth: 10, sortable: true },
+    sample_specie: {db_id: 'Species_Name', label: 'Specie', columnWidth: 20, sortable: true },
     sample_date: {db_id: 'date', label: 'Date', columnWidth: 10, sortable: true },
     sample_retrieve: {db_id: 'Id_Sample', label: 'Actions', columnWidth: 10, template: "<a href='index.php?page=sample&code=%data'>Retrieve</a>" }
   },
@@ -46,10 +47,31 @@ $(document).ready(function(){
   </div>
 
   <a href="index.php?page=sample" class="waves-effect waves-teal btn btn-large">Enter</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="waves-effect waves-teal btn btn-large" onclick="calculateResults()">Calculate results</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <div id="sample_table">
+  </div>
 
-
-<div id="sample_table">
-
-</div>
+  <script type="text/javascript">
+    function calculateResults() {
+      $.ajax({
+        type: "POST",
+        url: "index.php",
+        async: true,
+        data: "action=result.calculateResults",
+        dataType: "json",
+        error: function(data) {
+          window.location.replace("index.php?page=results")
+          //alert("An error occured.");
+        },
+        success: function(data) {
+          window.location.replace("index.php?page=results")
+          //alert("Good");
+        }
+      });
+    }
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
 
 </div>

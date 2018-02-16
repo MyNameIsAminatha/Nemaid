@@ -9,6 +9,7 @@ if(isset($_GET['code'])) {
 }
 
 $genuses = $this->cast("cogenus")->getGenuses();
+$species = $this->cast("cospecie")->getSpecies();
 $quantChars = $this->cast("coquantchar")->getQuantChars();
 
 ?>
@@ -35,6 +36,17 @@ $quantChars = $this->cast("coquantchar")->getQuantChars();
                 <option disabled selected>Choose your genus</option>
                 <<?php foreach ($genuses as $genus): ?>
                   <option <?php if($editing && ($sampleInfo['Genus_Name'] == $genus['Genus_Name'])) { echo 'selected'; } ?> value="<?= $genus['Genus_Name'] ?>"><?= $genus['Genus_Name'] ?></option>
+                <?php endforeach; ?>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Specie (optional)</td>
+            <td>
+              <select class="" name="Species_Name">
+                <option value="" selected>Not known</option>
+                <<?php foreach ($species as $specie): ?>
+                  <option <?php if($editing && ($sampleInfo['Species_Name'] == $specie['Species_Name'])) { echo 'selected'; } ?> value="<?= $specie['Species_Name'] ?>"><?= $specie['Species_Name'] ?></option>
                 <?php endforeach; ?>
               </select>
             </td>

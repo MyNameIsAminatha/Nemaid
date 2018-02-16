@@ -12,20 +12,19 @@
         <a href="index.php" class="brand-logo center">NEMAID</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="">Home</a></li>
-          <li><a href="#">Genus</a></li>
           <?php if($isAuth) { ?><!-- L'utilisateur est connecté -->
-            <li><a href="#">Parameters</a></li>
-            <li><a href="index.php?page=samples">Sample</a></li>
-            <li><a href="#">Results</a></li>
-            <li><a href="#">Exit</a></li>
-            <li><a href="#">Help</a></li>
+            <!-- <li><a href="index.php?page=genus">Genus</a></li> -->
+            <!-- <li><a href="#">Parameters</a></li> -->
+            <li><a href="index.php?page=samples">Sample gestion</a></li>
+            <li><a href="index.php?page=results">Results</a></li>
+            <!-- <li><a href="#">Exit</a></li> -->
+            <li><a href="index.php?page=help">Help</a></li>
           <?php } ?>
         </ul>
+        <!-- Here was the log in and log out -->
         <ul class="right">
-          <?php if(!$isAuth) { ?>
-          <li><a href="index.php?page=login">LOG IN</a></li>
-        <?php } elseif($isAuth) { ?>
-            <li><a href="index.php?logout">Logout</a></li>
+          <?php if($isAuth) { ?>
+            <li><a href="index.php?logout">LOG OUT</a></li>
           <?php } ?>
         </ul>
 
