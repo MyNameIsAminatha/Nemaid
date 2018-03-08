@@ -337,9 +337,9 @@ explore = {
 
 	createTopNavigation: function(params) {
 		var html = "<div class='explore-topNavigation'><div class='row no-margin'>";
-		html += "<div style='display: flex; width: 250px;'><input data-action='globalSearch' type='text' class='standard-input no-margin explore-search-input' placeholder='Votre recherche ...'/><i class='fa fa-search explore-search-icon'></i></div>";
+		html += "<div style='display: flex; width: 250px;'><input data-action='globalSearch' type='text' class='standard-input no-margin explore-search-input' placeholder='Search ...'/><i class='fa fa-search explore-search-icon'></i></div>";
 		html += "<div id='explore-search-loader'></div>";
-		html += "<div style='float: right;'><select data-action='changeresultPerPage' class='standard-select explore-result-per-page'><option value='10'>Résultats par page (10)</option><option value='20'>20</option><option value='50'>50</option><option value='100'>100</option><option value='9999999'>Tous les résultats</option></select></div></div></div>";
+		html += "<div style='float: right;'><select data-action='changeresultPerPage' class='standard-select explore-result-per-page'><option value='10'>Results per page (10)</option><option value='20'>20</option><option value='50'>50</option><option value='100'>100</option><option value='9999999'>All results</option></select></div></div></div>";
 		return html;
 	},
 
@@ -358,13 +358,13 @@ explore = {
 			}
 
 			html += "<div style='float: left; line-height: 31px;'>";
-				html += "Affiche <b>";
+				html += "Displaying <b>";
 				html += (data['count']['nbr'] == 0) ? ('0') : (firstResult);
-				html += "</b> de <b>";
+				html += "</b> from <b>";
 				html += lastResult;
-				html += "</b> à <b>";
+				html += "</b> to <b>";
 				html += data['count']['nbr'];
-				html += "</b> entrées";
+				html += "</b> results";
 			html += "</div>";
 			html += "<div class='valign-wrapper' style='float: right;'>";
 				if(params.currentPage <= 1) {

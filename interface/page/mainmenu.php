@@ -11,7 +11,7 @@
       <div class="nav-wrapper">
         <a href="index.php" class="brand-logo center">NEMAID</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="">Home</a></li>
+          <li><a href="index.php?page=welcome">Home</a></li>
           <?php if($isAuth) { ?><!-- L'utilisateur est connecté -->
             <!-- <li><a href="index.php?page=genus">Genus</a></li> -->
             <!-- <li><a href="#">Parameters</a></li> -->

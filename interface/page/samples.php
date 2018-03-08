@@ -1,6 +1,8 @@
 <?php
 // DB devra sortir la liste des samples
 $samples = $this->cast("cosample")->getSamples();
+$genuses = $this->cast("cogenus")->getGenuses();
+
 ?>
 
 
@@ -9,7 +11,7 @@ $samples = $this->cast("cosample")->getSamples();
 var params = {
   fields: { // Fields of the database to be displayed, label of the fields for the headers
     sample_genus: {db_id: 'Genus_Name', label: 'Genus', columnWidth: 10, sortable: true },
-    sample_specie: {db_id: 'Species_Name', label: 'Specie', columnWidth: 20, sortable: true },
+    sample_specie: {db_id: 'Species_Name', label: 'Species', columnWidth: 20, sortable: true },
     sample_date: {db_id: 'date', label: 'Date', columnWidth: 10, sortable: true },
     sample_retrieve: {db_id: 'Id_Sample', label: 'Actions', columnWidth: 10, template: "<a href='index.php?page=sample&code=%data'>Retrieve</a>" }
   },
@@ -26,7 +28,13 @@ var params = {
   search: {
     globalSearch: '',
     searchFields: {},
-    searchFilters: {}
+    searchFilters: {
+      filter_GENUS: {
+        searchId: "Genus_Name",
+        searchTpl: "bw",
+        searchVal: ""
+      }
+    }
   },
 
   exportAllowed: false,
@@ -38,6 +46,13 @@ $(document).ready(function(){
 
   explore.init(params, true);
 
+  $('select').material_select();
+
+  $(document).on('change', '#changeGenus', function() {
+    params.search.searchFilters.filter_GENUS.searchVal = $(this).val();
+    explore.init(params, false);
+  });
+
 });
 </script>
 
@@ -45,33 +60,15 @@ $(document).ready(function(){
   <div class="nemaid-window-head">
     Sample list
   </div>
+  <select id="changeGenus">
+    <option value="" selected>All genuses</option>
+    <<?php foreach ($genuses as $genus): ?>
+      <option value="<?= $genus['Genus_Name'] ?>"><?= $genus['Genus_Name'] ?></option>
+    <?php endforeach; ?>
+  </select>
 
-  <a href="index.php?page=sample" class="waves-effect waves-teal btn btn-large">Enter</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a class="waves-effect waves-teal btn btn-large" onclick="calculateResults()">Calculate results</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="index.php?page=sample" class="waves-effect waves-teal btn btn-large">Add sample</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <div id="sample_table">
   </div>
-
-  <script type="text/javascript">
-    function calculateResults() {
-      $.ajax({
-        type: "POST",
-        url: "index.php",
-        async: true,
-        data: "action=result.calculateResults",
-        dataType: "json",
-        error: function(data) {
-          window.location.replace("index.php?page=results")
-          //alert("An error occured.");
-        },
-        success: function(data) {
-          window.location.replace("index.php?page=results")
-          //alert("Good");
-        }
-      });
-    }
-    $(document).ready(function() {
-      $('select').material_select();
-    });
-  </script>
 
 </div>

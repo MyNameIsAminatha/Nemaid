@@ -16,7 +16,7 @@ $quantChars = $this->cast("coquantchar")->getQuantChars();
 
 <div class="container z-depth-1 nemaid-window">
   <div class="nemaid-window-head">
-    <?php if($editing) { echo 'You are modifying sample : ' . $sample_code; } else { echo 'Register sample'; } ?>
+    <?php if($editing) { echo 'You are modifying sample : ' . $sample_code; } else { echo 'Enter sample data'; } ?>
   </div>
     <form id="sampleForm" onsubmit="return false;">
       <input style="display: none;" name="Id_Sample" value="<?= ($editing) ? $sampleInfo['Id_Sample'] : '' ?>" />
@@ -40,7 +40,7 @@ $quantChars = $this->cast("coquantchar")->getQuantChars();
               </select>
             </td>
           </tr>
-          <tr>
+          <!--<tr>
             <td>Specie (optional)</td>
             <td>
               <select class="" name="Species_Name">
@@ -50,11 +50,16 @@ $quantChars = $this->cast("coquantchar")->getQuantChars();
                 <?php endforeach; ?>
               </select>
             </td>
-          </tr>
+          </tr>-->
           <tr>
             <!--in sample info the info got to be the same as in the data base-->
             <td>Date</td>
             <td><input name="date" type="date" placeholder="Date of entry" value="<?= ($editing) ? $sampleInfo['date'] : '' ?>" /></td>
+          </tr>
+          <tr>
+            <!--in sample info the info got to be the same as in the data base-->
+            <td>Code</td>
+            <td><input name="Code_Sample" type="text" placeholder="Your sample code number" value="<?= ($editing) ? $sampleInfo['Code_Sample'] : '' ?>" /></td>
           </tr>
         <thead>
           <tr>
@@ -97,10 +102,10 @@ $quantChars = $this->cast("coquantchar")->getQuantChars();
       data: "action=sample.saveSample&" + formData,
       dataType: "json",
       error: function(data) {
-        alert("An error occured.");
+        alert("An error occured. Please be sure to fill necessary fields.");
       },
       success: function(data) {
-        alert("Good");
+        window.location.replace("index.php?page=samples")
       }
     });
   }

@@ -1,21 +1,23 @@
 </main>
 
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">Gphy Group</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
+<?php if ($_GET['page'] == 'welcome'): ?>
+
+  <footer class="page-footer">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="www.google.com">More Links</a>
+      <div class="row">
+        <div class="col l12 s12">
+          <!--<h5 class="white-text">Footer Content</h5>-->
+        <p class="grey-text center text-lighten-4">Aminatha - Claire - Constance</p>
+        </div>
+      
+      </div>
     </div>
-  </div>
-</footer>
+    <div class="footer-copyright">
+      <div class="container center">
+      © 2017 Copyright Text
+
+      </div>
+    </div>
+  </footer>
+
+<?php endif; ?>

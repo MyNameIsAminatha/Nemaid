@@ -23,7 +23,7 @@ class axsample extends main {
 		}
 
 		// Removing unecessary data
-		unset($data['action'], $data['Genus_Name'], $data['date'], $data['Id_Sample'], $data['Species_Name'], $data['Id_User']);
+		unset($data['action'], $data['Genus_Name'], $data['Code_Sample'], $data['date'], $data['Id_Sample'], $data['Species_Name'], $data['Id_User']);
 
 		$result = $this->cast("coquantchar")->saveQuantChars($sample_id, $data);
 

@@ -1,5 +1,5 @@
 <center>
-  <h5 class="teal-text">Please, login into your account</h5>
+  <h5 class="teal-text">Please enter</h5>
   <div class="section"></div>
 
   <div class="container">
@@ -13,8 +13,8 @@
 
         <div class='row'>
           <div class='input-field col s12'>
-            <input class='validate' type='email' name='email' id='email' />
-            <label for='email'>Enter your email</label>
+            <input class='validate' type='text' name='email' id='email' />
+            <label for='email'>Identifier</label>
           </div>
         </div>
 
@@ -53,7 +53,7 @@
         alert("An error occured.");
       },
       success: function(data) {
-      	if(data == 'success') window.location.replace("index.php?page=genus");
+      	if(data == 'success') window.location.replace("index.php?page=samples");
         if(data == 'error') Materialize.toast('Identifiants incorrects', 4000);
       }
     });
