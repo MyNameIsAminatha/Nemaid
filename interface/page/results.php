@@ -60,7 +60,7 @@ $(document).ready(function(){
       <option value="<?= $sample['Id_Sample'] ?>"><?= $sample['Code_Sample'] ?></option>
     <?php endforeach; ?>
   </select>
-  <a class="waves-effect waves-teal btn btn-large" onclick="calculateResults()">Refresh results</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="waves-effect waves-teal btn btn-large" onclick="calculateResults()">Compute</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <div id="waitBox"></div>
   <div id="result_table">
   </div>
