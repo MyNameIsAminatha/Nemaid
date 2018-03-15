@@ -1,6 +1,11 @@
+<?php
+  $samples = $this->cast("cosample")->getSamples();
+?>
+
 <script type="text/javascript">
 var params = {
   fields: { // Fields of the database to be displayed, label of the fields for the headers
+    result_sample: {db_id: 'Id_Sample', label: 'Sample Id', columnWidth: 5, sortable: true },
     result_specie: {db_id: 'NomEspece', label: 'Species name', columnWidth: 15, sortable: true },
     result_population: {db_id: 'Population', label: 'Population', columnWidth: 25, sortable: true },
     result_refnumber: {db_id: 'RefNumber', label: 'Ref Number', columnWidth: 10, sortable: true },
@@ -19,7 +24,13 @@ var params = {
   search: {
     globalSearch: '',
     searchFields: {},
-    searchFilters: {}
+    searchFilters: {
+      filter_GENUS: {
+        searchId: "Id_Sample",
+        searchTpl: "bw",
+        searchVal: ""
+      }
+    }
   },
 
   exportAllowed: false,
@@ -31,6 +42,11 @@ $(document).ready(function(){
 
   explore.init(params, true);
 
+  $(document).on('change', '#changeSample', function() {
+    params.search.searchFilters.filter_GENUS.searchVal = $(this).val();
+    explore.init(params, false);
+  });
+
 });
 </script>
 
@@ -38,8 +54,14 @@ $(document).ready(function(){
   <div class="nemaid-window-head">
     Results
   </div>
+  <select id="changeSample">
+    <option value="" selected>All samples</option>
+    <<?php foreach ($samples as $sample): ?>
+      <option value="<?= $sample['Id_Sample'] ?>"><?= $sample['Code_Sample'] ?></option>
+    <?php endforeach; ?>
+  </select>
   <a class="waves-effect waves-teal btn btn-large" onclick="calculateResults()">Refresh results</a>&nbsp;&nbsp;&nbsp;&nbsp;
-
+  <div id="waitBox"></div>
   <div id="result_table">
   </div>
 
@@ -48,6 +70,7 @@ $(document).ready(function(){
       $('select').material_select();
     });
     function calculateResults() {
+      $("#waitBox").html("Loading ...");
       $.ajax({
         type: "POST",
         url: "index.php",
