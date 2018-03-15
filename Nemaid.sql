@@ -52,7 +52,7 @@ BEGIN
 		End while;
 
 		SET Score_Fin = ROUND((Score_Tot / Cpt_Num)*100,2);
-		Insert into Resultats VALUES((Select Id_Species from species_description where Id_Species_Description = Cpt_Species),(Select Population_Name from population where Id_Species_Description = Cpt_Species),(Select Id_Bibliography from species_description where Id_Species_Description = Cpt_Species), Score_Fin);
+		Insert into Resultats VALUES(pId_Sample, (Select Id_Species from species_description where Id_Species_Description = Cpt_Species),(Select Population_Name from population where Id_Species_Description = Cpt_Species),(Select Id_Bibliography from species_description where Id_Species_Description = Cpt_Species), Score_Fin);
 		SET Cpt_Species = Cpt_Species +1;
 		SET Cpt_Char = 1;
 		SET Score_Tot = 0;
